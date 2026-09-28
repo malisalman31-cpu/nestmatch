@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="NestMatch is a reciprocal rental marketplace where renters and landlords match only after both express interest." />
+    <meta name="theme-color" content="#1738d2" />
+    <title>NestMatch — Find a home that fits both sides</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231738d2'/%3E%3Cpath d='m12 30 20-16 20 16v22H12z' fill='%23d7ff46'/%3E%3Cpath d='M25 52V34h14v18' fill='%231738d2'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#main"><span class="brand-home">⌂</span>NestMatch</a>
+      <div class="role-switch" aria-label="Marketplace role">
+        <button class="active" type="button" data-role="renter">I’m renting</button>
+        <button type="button" data-role="landlord">I’m listing</button>
+      </div>
+      <div class="header-actions"><button class="reset-button" id="reset-button" type="button">Reset demo</button><button class="matches-button" id="matches-button" type="button">Matches <span id="match-count">0</span></button></div>
+    </header>
+
+    <main class="workspace" id="main">
+      <aside class="preferences">
+        <span class="step-label">YOUR FIT</span>
+        <h1 id="preference-heading">Shape your ranked feed.</h1>
+        <div id="renter-preferences">
+          <label>Monthly budget <output id="budget-value">$2,800</output><input id="budget" type="range" min="1600" max="4500" value="2800" step="100" /></label>
+          <label>Maximum commute <output id="commute-value">35 min</output><input id="commute" type="range" min="10" max="60" value="35" step="5" /></label>
+          <fieldset id="home-type"><legend>Home type</legend><button class="chip active" data-value="Any" type="button">Any</button><button class="chip" data-value="Apartment" type="button">Apartment</button><button class="chip" data-value="House" type="button">House</button><button class="chip" data-value="Loft" type="button">Loft</button></fieldset>
+          <label class="check"><input id="pet-friendly" type="checkbox" checked /> Pet friendly</label>
+        </div>
+        <div id="landlord-preferences" hidden>
+          <label>Minimum income <output id="income-value">$72,000</output><input id="min-income" type="range" min="30000" max="180000" value="72000" step="2000" /></label>
+          <label>Move-in window <output id="move-value">60 days</output><input id="move-within" type="range" min="7" max="180" value="60" step="1" /></label>
+          <fieldset id="pet-policy"><legend>Pet policy</legend><button class="chip active" data-value="Either" type="button">Either</button><button class="chip" data-value="Yes" type="button">Pets okay</button><button class="chip" data-value="No" type="button">No pets</button></fieldset>
+          <label>Minimum stay <output id="stay-value">12 months</output><input id="min-stay" type="range" min="3" max="36" value="12" step="3" /></label>
+        </div>
+        <p class="privacy">Your preferences stay on this device.</p>
+      </aside>
+
+      <section class="feed" aria-live="polite">
+        <div class="feed-heading"><div><span class="step-label">TOP MATCH</span><h2 id="feed-title">Best fit first</h2></div><span class="queue" id="queue-count">1 of 6</span></div>
+        <article class="candidate-card" id="candidate-card">
+          <div class="property-photo" id="candidate-visual" role="img" aria-label="Bright apartment living room"></div>
+          <div class="candidate-copy">
+            <div class="title-row"><div><h3 id="candidate-title">Silver Lake light-filled one bedroom</h3><p id="candidate-location">Silver Lake · Los Angeles</p></div><strong id="candidate-price">$2,650<span>/mo</span></strong></div>
+            <div class="facts" id="candidate-facts"><span>1 bed</span><span>1 bath</span><span>760 ft²</span><span>Pets welcome</span></div>
+            <p class="candidate-description" id="candidate-description"></p>
+            <p class="reason" id="candidate-reason">Strong fit for your budget, commute, and preference for natural light.</p>
+          </div>
+        </article>
+        <div class="empty-feed" id="empty-feed" hidden><strong>You reviewed every candidate.</strong><p>Reset the demo to start again, or switch roles to review the other side of the marketplace.</p><button type="button" data-reset>Reset candidates</button></div>
+        <div class="actions">
+          <button class="pass" type="button" data-decision="pass">Pass</button>
+          <button class="save" type="button" data-decision="save">Save</button>
+          <button class="like" type="button" data-decision="like">Interested</button>
+        </div>
+      </section>
+
+      <aside class="score-panel">
+        <div class="score-orbit" id="score-orbit"><strong id="score-value">92</strong><span>match score</span></div>
+        <h2>Why it ranks here</h2>
+        <div id="score-factors"></div>
+        <p>Both sides decide independently. A match appears only after reciprocal interest.</p>
+        <section class="match-preview"><span class="step-label">RECENT MATCHES</span><div id="match-preview"><p class="no-matches">No reciprocal matches yet.</p></div></section>
+      </aside>
+    </main>
+    <dialog id="matches-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close matches">×</button></form><span class="step-label">RECIPROCAL MATCHES</span><h2>Your matches</h2><p class="dialog-intro">A match appears only when both sides independently express interest.</p><div id="matches-list"></div></dialog>
+    <div class="toast" id="toast" hidden></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+# Contributing
+
+Fork the repository, create a focused branch, and run `npm run check` before opening a pull request. Add tests for ranking, validation, reciprocal matching, and WebMCP behavior. Never include real applicant records, addresses, income data, identity documents, or private messages in fixtures.
