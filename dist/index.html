@@ -16,13 +16,18 @@
         <button class="active" type="button" data-role="renter">I’m renting</button>
         <button type="button" data-role="landlord">I’m listing</button>
       </div>
-      <div class="header-actions"><button class="reset-button" id="reset-button" type="button">Reset demo</button><button class="matches-button" id="matches-button" type="button">Matches <span id="match-count">0</span></button></div>
+      <div class="header-actions"><button class="profile-button" id="profile-button" type="button">My profile</button><button class="reset-button" id="reset-button" type="button">Reset demo</button><button class="matches-button" id="matches-button" type="button">Matches <span id="match-count">0</span></button></div>
     </header>
 
     <main class="workspace" id="main">
       <aside class="preferences">
         <span class="step-label">YOUR FIT</span>
         <h1 id="preference-heading">Shape your ranked feed.</h1>
+        <button class="profile-summary" id="profile-summary" type="button">
+          <span class="profile-avatar" id="profile-avatar">YU</span>
+          <span><strong id="profile-name">Your renter profile</strong><small id="profile-meta">Add photos, hobbies and passions</small></span>
+          <b aria-hidden="true">Edit</b>
+        </button>
         <div id="renter-preferences">
           <label>Monthly budget <output id="budget-value">$2,800</output><input id="budget" type="range" min="1600" max="4500" value="2800" step="100" /></label>
           <label>Maximum commute <output id="commute-value">35 min</output><input id="commute" type="range" min="10" max="60" value="35" step="5" /></label>
@@ -46,6 +51,7 @@
             <div class="title-row"><div><h3 id="candidate-title">Silver Lake light-filled one bedroom</h3><p id="candidate-location">Silver Lake · Los Angeles</p></div><strong id="candidate-price">$2,650<span>/mo</span></strong></div>
             <div class="facts" id="candidate-facts"><span>1 bed</span><span>1 bath</span><span>760 ft²</span><span>Pets welcome</span></div>
             <p class="candidate-description" id="candidate-description"></p>
+            <div class="candidate-social" id="candidate-social"></div>
             <p class="reason" id="candidate-reason">Strong fit for your budget, commute, and preference for natural light.</p>
           </div>
         </article>
@@ -66,6 +72,32 @@
       </aside>
     </main>
     <dialog id="matches-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close matches">×</button></form><span class="step-label">RECIPROCAL MATCHES</span><h2>Your matches</h2><p class="dialog-intro">A match appears only when both sides independently express interest.</p><div id="matches-list"></div></dialog>
+    <dialog id="profile-dialog" class="profile-dialog">
+      <form method="dialog"><button class="dialog-close" aria-label="Close profile editor">×</button></form>
+      <span class="step-label">YOUR SIDE OF THE MATCH</span>
+      <h2 id="profile-dialog-title">Build your renter profile</h2>
+      <p class="dialog-intro">Share enough personality for a better human fit. Everything stays privately in this browser.</p>
+      <form id="profile-form" class="profile-form">
+        <label>Display name<input id="profile-display-name" name="displayName" maxlength="50" required placeholder="Your name" /></label>
+        <label>About you<textarea id="profile-about" name="about" maxlength="300" rows="3" placeholder="What should the other side know about you?"></textarea></label>
+        <div class="profile-grid">
+          <label>Hobbies<input id="profile-hobbies" name="hobbies" maxlength="160" placeholder="Hiking, cooking, live music" /></label>
+          <label>Passions<input id="profile-passions" name="passions" maxlength="160" placeholder="Community, design, sustainability" /></label>
+        </div>
+        <section class="upload-section">
+          <div><strong>Photos of you</strong><small>Up to 3 JPG, PNG or WebP images</small></div>
+          <label class="upload-button">Add personal photos<input id="profile-photos" type="file" accept="image/jpeg,image/png,image/webp" multiple /></label>
+          <div class="photo-grid" id="profile-photo-preview"></div>
+        </section>
+        <section class="upload-section" id="listing-photo-section" hidden>
+          <div><strong>Photos of the place</strong><small>Up to 6 listing images</small></div>
+          <label class="upload-button">Add property photos<input id="listing-photos" type="file" accept="image/jpeg,image/png,image/webp" multiple /></label>
+          <div class="photo-grid listing-grid" id="listing-photo-preview"></div>
+        </section>
+        <p class="storage-note">Photos are compressed before saving. Nothing is uploaded to a server or shared with other visitors in this public demo.</p>
+        <div class="profile-actions"><button class="clear-profile" id="clear-profile" type="button">Clear profile</button><button class="save-profile" type="submit">Save profile</button></div>
+      </form>
+    </dialog>
     <div class="toast" id="toast" hidden></div>
     <script type="module" src="./app.js"></script>
   </body>

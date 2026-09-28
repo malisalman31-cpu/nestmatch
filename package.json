@@ -7,7 +7,7 @@
     "start": "node scripts/serve.mjs",
     "test": "node --test",
     "test:coverage": "node --test --experimental-test-coverage",
-    "check": "node --check dist/marketplace.js && node --check dist/app.js && node --check dist/webmcp.js && node --check scripts/serve.mjs && node --test"
+    "check": "node --check dist/marketplace.js && node --check dist/profiles.js && node --check dist/profile-ui.js && node --check dist/app.js && node --check dist/webmcp.js && node --check scripts/serve.mjs && node --test"
   },
   "engines": { "node": ">=20" },
   "license": "MIT"

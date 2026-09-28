@@ -22,6 +22,12 @@ Every candidate receives an inspectable weighted score across four feature group
 
 The interface updates the ranking immediately as preferences change. Decisions, saved candidates, and matches stay in browser storage. No account or server is required for the public demo.
 
+## Profiles and photos
+
+Renters and landlords can each build a separate profile with a display name, introduction, hobbies, passions, and up to three personal photos. Landlords can also add up to six photos of their place. Images are validated, resized, and compressed in the browser before being saved.
+
+Profile details and photos are device-private: they remain in the current browser and are never uploaded to a server or shared with other people. This keeps the public demo safe to try without creating an account. Clearing the site data or using the reset control removes them.
+
 ## Run locally
 
 ```bash
@@ -37,18 +43,20 @@ npm run check
 npm run test:coverage
 ```
 
-GitHub Actions is enabled and runs the syntax checks, 51 behavioral tests, and coverage suite on every push and pull request.
+GitHub Actions is enabled and runs the syntax checks, 61 behavioral tests, and coverage suite on every push and pull request.
 
 ## Architecture
 
 - `dist/marketplace.js` contains deterministic scoring, ranking, preference validation, swipe storage, and match generation.
+- `dist/profiles.js` validates and normalizes renter and landlord profile content.
+- `dist/profile-ui.js` handles private, device-local profile and photo editing.
 - `dist/app.js` uses the same functions for the visible renter and landlord journeys.
 - `dist/webmcp.js` exposes those journeys to compatible browser agents.
 - `docs/schema.sql` documents 12 relational entities and the integrity rules for a production implementation.
 
 ## Scope and privacy
 
-This is a public portfolio implementation with representative demo profiles and listings. It does not publish real addresses, run background checks, accept payments, or contact anyone. All decisions remain on the current device unless the user clears browser storage.
+This is a public portfolio implementation with representative demo profiles and listings. It does not publish real addresses, upload profile photos, run background checks, accept payments, or contact anyone. All decisions, profile fields, and photos remain on the current device unless the user clears browser storage.
 
 The property triptych is original synthetic imagery generated specifically for this public demo; it does not depict actual listings.
 

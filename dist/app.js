@@ -1,9 +1,10 @@
 import { applyPreferences, createInitialState, currentCandidate, hydrateState, PROPERTIES, recordDecision, RENTERS } from "./marketplace.js";
+import { setupProfileEditor } from "./profile-ui.js";
 import { registerNestMatchTools } from "./webmcp.js";
 
 const STORAGE_KEY = "nestmatch-workspace-v1";
 const elements = {
-  role: document.querySelector(".role-switch"), renterPreferences: document.querySelector("#renter-preferences"), landlordPreferences: document.querySelector("#landlord-preferences"), preferenceHeading: document.querySelector("#preference-heading"), feedTitle: document.querySelector("#feed-title"), queue: document.querySelector("#queue-count"), card: document.querySelector("#candidate-card"), visual: document.querySelector("#candidate-visual"), title: document.querySelector("#candidate-title"), location: document.querySelector("#candidate-location"), price: document.querySelector("#candidate-price"), facts: document.querySelector("#candidate-facts"), description: document.querySelector("#candidate-description"), reason: document.querySelector("#candidate-reason"), empty: document.querySelector("#empty-feed"), actions: document.querySelector(".actions"), score: document.querySelector("#score-value"), orbit: document.querySelector("#score-orbit"), factors: document.querySelector("#score-factors"), matchCount: document.querySelector("#match-count"), matchPreview: document.querySelector("#match-preview"), matchesDialog: document.querySelector("#matches-dialog"), matchesList: document.querySelector("#matches-list"), toast: document.querySelector("#toast"),
+  role: document.querySelector(".role-switch"), renterPreferences: document.querySelector("#renter-preferences"), landlordPreferences: document.querySelector("#landlord-preferences"), preferenceHeading: document.querySelector("#preference-heading"), feedTitle: document.querySelector("#feed-title"), queue: document.querySelector("#queue-count"), card: document.querySelector("#candidate-card"), visual: document.querySelector("#candidate-visual"), title: document.querySelector("#candidate-title"), location: document.querySelector("#candidate-location"), price: document.querySelector("#candidate-price"), facts: document.querySelector("#candidate-facts"), description: document.querySelector("#candidate-description"), social: document.querySelector("#candidate-social"), reason: document.querySelector("#candidate-reason"), empty: document.querySelector("#empty-feed"), actions: document.querySelector(".actions"), score: document.querySelector("#score-value"), orbit: document.querySelector("#score-orbit"), factors: document.querySelector("#score-factors"), matchCount: document.querySelector("#match-count"), matchPreview: document.querySelector("#match-preview"), matchesDialog: document.querySelector("#matches-dialog"), matchesList: document.querySelector("#matches-list"), toast: document.querySelector("#toast"),
 };
 
 let state = readState();
@@ -67,6 +68,7 @@ function renderCandidate(candidate) {
     const suffix = Object.assign(document.createElement("span"), { textContent: "/mo" });
     elements.price.replaceChildren(document.createTextNode(formatCurrency(candidate.price)), suffix);
     setFacts([candidate.beds ? `${candidate.beds} bed` : "Studio", `${candidate.baths} bath`, `${candidate.sqft.toLocaleString()} ft²`, candidate.petFriendly ? "Pets welcome" : "No pets"]);
+    setSocial(`Hosted by ${candidate.landlord}`, [...candidate.hostHobbies, ...candidate.hostPassions]);
   } else {
     elements.visual.className = "renter-visual";
     elements.visual.style.backgroundPosition = "";
@@ -76,6 +78,7 @@ function renderCandidate(candidate) {
     elements.location.textContent = `${candidate.occupation}${candidate.verified ? " · Identity verified" : ""}`;
     elements.price.textContent = formatCurrency(candidate.income);
     setFacts([`${candidate.moveWithin}-day move`, `${candidate.stayMonths}-month stay`, candidate.household, candidate.pets ? "Has a pet" : "No pets"]);
+    setSocial("Personality", [...candidate.hobbies, ...candidate.passions]);
   }
   elements.description.textContent = candidate.description || candidate.bio;
   elements.reason.textContent = candidate.reasons.join(" · ");
@@ -88,6 +91,10 @@ function renderCandidate(candidate) {
     const bar = document.createElement("i"); bar.style.setProperty("--score", `${value}%`);
     node.append(heading, bar); return node;
   }));
+}
+
+function setSocial(heading, values) {
+  elements.social.replaceChildren(Object.assign(document.createElement("strong"), { textContent: heading }), ...values.map((value) => Object.assign(document.createElement("span"), { textContent: value })));
 }
 
 function candidateByMatch(match) { return (match.role === "renter" ? PROPERTIES : RENTERS).find((item) => item.id === match.candidateId); }
@@ -127,7 +134,9 @@ function decide(candidateId, decision) {
   return { candidateId, decision, matched: result.matched, matchCount: state.matches.length, nextCandidate: next ? summary(next) : null };
 }
 
-elements.role.addEventListener("click", (event) => { const role = event.target.closest("button[data-role]")?.dataset.role; if (!role) return; state.role = role; saveState(); render(); showToast(role === "renter" ? "Showing homes for renters." : "Showing renter candidates for landlords."); });
+const profileEditor = setupProfileEditor({ getRole: () => state.role, showToast });
+
+elements.role.addEventListener("click", (event) => { const role = event.target.closest("button[data-role]")?.dataset.role; if (!role) return; state.role = role; saveState(); render(); profileEditor.render(); showToast(role === "renter" ? "Showing homes for renters." : "Showing renter candidates for landlords."); });
 document.querySelector("#budget").addEventListener("input", (event) => updatePreferences("renter", { budget: Number(event.target.value) }));
 document.querySelector("#commute").addEventListener("input", (event) => updatePreferences("renter", { commute: Number(event.target.value) }));
 document.querySelector("#pet-friendly").addEventListener("change", (event) => updatePreferences("renter", { petFriendly: event.target.checked }));
@@ -139,7 +148,7 @@ document.querySelector("#pet-policy").addEventListener("click", (event) => { con
 elements.actions.addEventListener("click", (event) => { const decision = event.target.closest("button[data-decision]")?.dataset.decision; const candidate = currentCandidate(state); if (decision && candidate) decide(candidate.id, decision); });
 document.querySelector("#matches-button").addEventListener("click", () => elements.matchesDialog.showModal());
 document.querySelector("#reset-button").addEventListener("click", resetDemo); document.querySelector("[data-reset]").addEventListener("click", resetDemo);
-function resetDemo() { state = createInitialState(); saveState(); render(); showToast("Demo reset."); }
+function resetDemo() { state = createInitialState(); profileEditor.reset(); saveState(); render(); showToast("Demo and private profiles reset."); }
 
 render();
 registerNestMatchTools({
