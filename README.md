@@ -37,7 +37,7 @@ npm run check
 npm run test:coverage
 ```
 
-The GitHub Actions workflow runs the syntax checks, 51 behavioral tests, and coverage suite on every push and pull request.
+GitHub Actions is enabled and runs the syntax checks, 51 behavioral tests, and coverage suite on every push and pull request.
 
 ## Architecture
 
