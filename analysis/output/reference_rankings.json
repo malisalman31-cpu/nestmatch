@@ -1,0 +1,344 @@
+{
+  "landlord_default": [
+    {
+      "factors": {
+        "fit": 96,
+        "location": 100,
+        "mutual": 100,
+        "price": 100
+      },
+      "id": "renter-leila",
+      "score": 99
+    },
+    {
+      "factors": {
+        "fit": 91,
+        "location": 100,
+        "mutual": 100,
+        "price": 100
+      },
+      "id": "renter-ava",
+      "score": 98
+    },
+    {
+      "factors": {
+        "fit": 93,
+        "location": 100,
+        "mutual": 100,
+        "price": 100
+      },
+      "id": "renter-naomi",
+      "score": 98
+    },
+    {
+      "factors": {
+        "fit": 90,
+        "location": 100,
+        "mutual": 58,
+        "price": 100
+      },
+      "id": "renter-omar",
+      "score": 91
+    },
+    {
+      "factors": {
+        "fit": 88,
+        "location": 80,
+        "mutual": 58,
+        "price": 100
+      },
+      "id": "renter-mateo",
+      "score": 86
+    }
+  ],
+  "landlord_income_120k": [
+    {
+      "factors": {
+        "fit": 93,
+        "location": 100,
+        "mutual": 100,
+        "price": 100
+      },
+      "id": "renter-naomi",
+      "score": 98
+    },
+    {
+      "factors": {
+        "fit": 96,
+        "location": 100,
+        "mutual": 100,
+        "price": 92
+      },
+      "id": "renter-leila",
+      "score": 96
+    },
+    {
+      "factors": {
+        "fit": 88,
+        "location": 80,
+        "mutual": 58,
+        "price": 100
+      },
+      "id": "renter-mateo",
+      "score": 86
+    },
+    {
+      "factors": {
+        "fit": 91,
+        "location": 100,
+        "mutual": 100,
+        "price": 64
+      },
+      "id": "renter-ava",
+      "score": 85
+    },
+    {
+      "factors": {
+        "fit": 90,
+        "location": 100,
+        "mutual": 58,
+        "price": 56
+      },
+      "id": "renter-omar",
+      "score": 76
+    }
+  ],
+  "landlord_no_pets": [
+    {
+      "factors": {
+        "fit": 91,
+        "location": 100,
+        "mutual": 100,
+        "price": 100
+      },
+      "id": "renter-ava",
+      "score": 98
+    },
+    {
+      "factors": {
+        "fit": 90,
+        "location": 100,
+        "mutual": 58,
+        "price": 100
+      },
+      "id": "renter-omar",
+      "score": 91
+    },
+    {
+      "factors": {
+        "fit": 51,
+        "location": 100,
+        "mutual": 100,
+        "price": 100
+      },
+      "id": "renter-leila",
+      "score": 88
+    },
+    {
+      "factors": {
+        "fit": 48,
+        "location": 100,
+        "mutual": 100,
+        "price": 100
+      },
+      "id": "renter-naomi",
+      "score": 87
+    },
+    {
+      "factors": {
+        "fit": 88,
+        "location": 80,
+        "mutual": 58,
+        "price": 100
+      },
+      "id": "renter-mateo",
+      "score": 86
+    }
+  ],
+  "renter_budget_2300": [
+    {
+      "factors": {
+        "fit": 100,
+        "location": 92,
+        "mutual": 100,
+        "price": 73
+      },
+      "id": "home-silver-lake",
+      "score": 89
+    },
+    {
+      "factors": {
+        "fit": 72,
+        "location": 90,
+        "mutual": 58,
+        "price": 100
+      },
+      "id": "home-echo-park",
+      "score": 84
+    },
+    {
+      "factors": {
+        "fit": 55,
+        "location": 95,
+        "mutual": 58,
+        "price": 94
+      },
+      "id": "home-koreatown",
+      "score": 79
+    },
+    {
+      "factors": {
+        "fit": 100,
+        "location": 89,
+        "mutual": 58,
+        "price": 49
+      },
+      "id": "home-highland-park",
+      "score": 73
+    },
+    {
+      "factors": {
+        "fit": 100,
+        "location": 91,
+        "mutual": 100,
+        "price": 10
+      },
+      "id": "home-los-feliz",
+      "score": 66
+    },
+    {
+      "factors": {
+        "fit": 55,
+        "location": 94,
+        "mutual": 100,
+        "price": 30
+      },
+      "id": "home-arts-district",
+      "score": 63
+    }
+  ],
+  "renter_default": [
+    {
+      "factors": {
+        "fit": 100,
+        "location": 92,
+        "mutual": 100,
+        "price": 99
+      },
+      "id": "home-silver-lake",
+      "score": 98
+    },
+    {
+      "factors": {
+        "fit": 100,
+        "location": 89,
+        "mutual": 58,
+        "price": 90
+      },
+      "id": "home-highland-park",
+      "score": 87
+    },
+    {
+      "factors": {
+        "fit": 72,
+        "location": 90,
+        "mutual": 58,
+        "price": 98
+      },
+      "id": "home-echo-park",
+      "score": 84
+    },
+    {
+      "factors": {
+        "fit": 100,
+        "location": 91,
+        "mutual": 100,
+        "price": 58
+      },
+      "id": "home-los-feliz",
+      "score": 83
+    },
+    {
+      "factors": {
+        "fit": 55,
+        "location": 95,
+        "mutual": 58,
+        "price": 98
+      },
+      "id": "home-koreatown",
+      "score": 81
+    },
+    {
+      "factors": {
+        "fit": 55,
+        "location": 94,
+        "mutual": 100,
+        "price": 74
+      },
+      "id": "home-arts-district",
+      "score": 78
+    }
+  ],
+  "renter_loft_no_pet": [
+    {
+      "factors": {
+        "fit": 100,
+        "location": 94,
+        "mutual": 100,
+        "price": 74
+      },
+      "id": "home-arts-district",
+      "score": 89
+    },
+    {
+      "factors": {
+        "fit": 66,
+        "location": 92,
+        "mutual": 100,
+        "price": 99
+      },
+      "id": "home-silver-lake",
+      "score": 89
+    },
+    {
+      "factors": {
+        "fit": 66,
+        "location": 95,
+        "mutual": 58,
+        "price": 98
+      },
+      "id": "home-koreatown",
+      "score": 83
+    },
+    {
+      "factors": {
+        "fit": 66,
+        "location": 89,
+        "mutual": 58,
+        "price": 90
+      },
+      "id": "home-highland-park",
+      "score": 79
+    },
+    {
+      "factors": {
+        "fit": 38,
+        "location": 90,
+        "mutual": 58,
+        "price": 98
+      },
+      "id": "home-echo-park",
+      "score": 75
+    },
+    {
+      "factors": {
+        "fit": 66,
+        "location": 91,
+        "mutual": 100,
+        "price": 58
+      },
+      "id": "home-los-feliz",
+      "score": 75
+    }
+  ]
+}

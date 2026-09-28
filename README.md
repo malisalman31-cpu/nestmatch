@@ -1,6 +1,6 @@
 # NestMatch
 
-NestMatch is a working, reciprocal rental-marketplace demo. Renters and landlords review independently ranked candidates, and a match forms only after both sides express interest.
+NestMatch is a working, reciprocal rental-marketplace demo with a Python-first recommendation engine. Renters and landlords review independently ranked candidates, and a match forms only after both sides express interest.
 
 **Live demo:** https://nestmatch-marketplace.workspace-016092.chatgpt.site
 
@@ -20,7 +20,7 @@ Every candidate receives an inspectable weighted score across four feature group
 - housing or profile fit: 25%; and
 - mutual-interest signal: 15%.
 
-The interface updates the ranking immediately as preferences change. Decisions, saved candidates, and matches stay in browser storage. No account or server is required for the public demo.
+The Python engine produces deterministic reference rankings across renter and landlord scenarios. The browser mirrors the same scoring contract so the public interface can update immediately as preferences change. Decisions, saved candidates, and matches stay in browser storage. No account or server is required for the public demo.
 
 ## Profiles and photos
 
@@ -39,15 +39,18 @@ Open `http://127.0.0.1:4180`.
 ## Test
 
 ```bash
+npm run build:rankings
 npm run check
 npm run test:coverage
 ```
 
-GitHub Actions is enabled and runs the syntax checks, 61 behavioral tests, and coverage suite on every push and pull request.
+GitHub Actions runs both implementations on every push: 61 browser-model tests, 12 Python recommendation tests, a cross-language parity test, deterministic reference-output validation, and JavaScript coverage.
 
 ## Architecture
 
-- `dist/marketplace.js` contains deterministic scoring, ranking, preference validation, swipe storage, and match generation.
+- `analysis/recommender.py` is the Python-first scoring and ranking engine.
+- `analysis/output/reference_rankings.json` records six reproducible renter and landlord scenarios.
+- `dist/marketplace.js` mirrors the Python scoring contract for real-time browser interaction, preference validation, swipe storage, and match generation.
 - `dist/profiles.js` validates and normalizes renter and landlord profile content.
 - `dist/profile-ui.js` handles private, device-local profile and photo editing.
 - `dist/app.js` uses the same functions for the visible renter and landlord journeys.
