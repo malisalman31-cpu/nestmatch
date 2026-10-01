@@ -8,7 +8,7 @@
     "build:rankings": "python3 analysis/build_reference_rankings.py",
     "test": "node --test && python3 -m unittest discover -s tests -p 'test_*.py'",
     "test:coverage": "node --test --experimental-test-coverage",
-    "check": "node --check dist/marketplace.js && node --check dist/profiles.js && node --check dist/profile-ui.js && node --check dist/app.js && node --check dist/webmcp.js && node --check scripts/serve.mjs && node --test && python3 -m unittest discover -s tests -p 'test_*.py' && python3 analysis/build_reference_rankings.py --check"
+    "check": "node --check dist/marketplace.js && node --check dist/profiles.js && node --check dist/profile-ui.js && node --check dist/sharing.js && node --check dist/app.js && node --check dist/webmcp.js && node --check scripts/serve.mjs && node --test && python3 -m unittest discover -s tests -p 'test_*.py' && python3 analysis/build_reference_rankings.py --check"
   },
   "engines": { "node": ">=20" },
   "license": "MIT"

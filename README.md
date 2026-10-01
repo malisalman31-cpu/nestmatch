@@ -28,6 +28,12 @@ Renters and landlords can each build a separate profile with a display name, int
 
 Profile details and photos are device-private: they remain in the current browser and are never uploaded to a server or shared with other people. This keeps the public demo safe to try without creating an account. Clearing the site data or using the reset control removes them.
 
+## Discovery and sharing
+
+The public site includes search metadata, structured application data, a sitemap, crawl rules, an installable web-app manifest, indexable product and privacy pages, and a built-in invite control. Shared links include campaign labels without uploading personal profile or matching data.
+
+Third-party ads are not active. A verified publisher account, eligible domain, consent setup, and ad-network approval are required before real advertising can be enabled safely.
+
 ## Run locally
 
 ```bash
@@ -44,7 +50,7 @@ npm run check
 npm run test:coverage
 ```
 
-GitHub Actions runs both implementations on every push: 61 browser-model tests, 12 Python recommendation tests, a cross-language parity test, deterministic reference-output validation, and JavaScript coverage.
+GitHub Actions runs both implementations on every push: 65 browser-model tests, 12 Python recommendation tests, a cross-language parity test, deterministic reference-output validation, and JavaScript coverage.
 
 ## Architecture
 

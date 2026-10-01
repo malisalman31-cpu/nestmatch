@@ -3,11 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="NestMatch is a reciprocal rental marketplace where renters and landlords match only after both express interest." />
+    <meta name="description" content="Try NestMatch, a free Los Angeles rental matching demo where renters and landlords rank compatible profiles and connect after mutual interest." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Muhammad Ali Salman" />
     <meta name="theme-color" content="#1738d2" />
-    <title>NestMatch — Find a home that fits both sides</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NestMatch" />
+    <meta property="og:title" content="NestMatch — Rental matching built for both sides" />
+    <meta property="og:description" content="Renters and landlords explore ranked matches, share interests, and connect only when both sides agree." />
+    <meta property="og:url" content="https://nestmatch-marketplace.workspace-016092.chatgpt.site/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="NestMatch — Rental matching built for both sides" />
+    <meta name="twitter:description" content="A free, privacy-friendly demo for reciprocal rental matching." />
+    <title>NestMatch | Mutual Rental Matching in Los Angeles</title>
+    <link rel="canonical" href="https://nestmatch-marketplace.workspace-016092.chatgpt.site/" />
+    <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231738d2'/%3E%3Cpath d='m12 30 20-16 20 16v22H12z' fill='%23d7ff46'/%3E%3Cpath d='M25 52V34h14v18' fill='%231738d2'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "NestMatch",
+        "url": "https://nestmatch-marketplace.workspace-016092.chatgpt.site/",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "description": "A privacy-friendly Los Angeles rental matching demo where renters and landlords connect after reciprocal interest.",
+        "author": { "@type": "Person", "name": "Muhammad Ali Salman" }
+      }
+    </script>
   </head>
   <body>
     <header class="topbar">
@@ -16,7 +41,7 @@
         <button class="active" type="button" data-role="renter">I’m renting</button>
         <button type="button" data-role="landlord">I’m listing</button>
       </div>
-      <div class="header-actions"><button class="profile-button" id="profile-button" type="button">My profile</button><button class="reset-button" id="reset-button" type="button">Reset demo</button><button class="matches-button" id="matches-button" type="button">Matches <span id="match-count">0</span></button></div>
+      <div class="header-actions"><button class="share-button" id="share-button" type="button">Invite people</button><button class="profile-button" id="profile-button" type="button">My profile</button><button class="reset-button" id="reset-button" type="button">Reset demo</button><button class="matches-button" id="matches-button" type="button">Matches <span id="match-count">0</span></button></div>
     </header>
 
     <main class="workspace" id="main">
@@ -72,6 +97,20 @@
         <section class="match-preview"><span class="step-label">RECENT MATCHES</span><div id="match-preview"><p class="no-matches">No reciprocal matches yet.</p></div></section>
       </aside>
     </main>
+    <section class="discovery" aria-labelledby="how-it-works-title">
+      <div class="discovery-heading">
+        <span class="step-label">A FAIRER WAY TO FIND A FIT</span>
+        <h2 id="how-it-works-title">Rental matching works better when both sides choose.</h2>
+        <p>NestMatch is a free, interactive Los Angeles rental-marketplace demo. It ranks compatibility transparently and reveals a match only after reciprocal interest.</p>
+      </div>
+      <div class="discovery-grid">
+        <article><strong>For renters</strong><p>Compare homes by budget, commute, housing preferences, and landlord personality—not just listing order.</p></article>
+        <article><strong>For landlords</strong><p>Review renter profiles by income fit, move timing, expected stay, hobbies, and passions.</p></article>
+        <article><strong>Private by design</strong><p>Your decisions, profile details, and uploaded photos stay in this browser and are never sent to a NestMatch server.</p></article>
+      </div>
+      <button class="discovery-share" id="discovery-share" type="button">Invite a renter or landlord</button>
+    </section>
+    <footer class="site-footer"><span>© 2026 NestMatch demo</span><nav aria-label="Site information"><a href="./about.html">About</a><a href="./privacy.html">Privacy</a><a href="https://github.com/malisalman31-cpu/nestmatch" rel="noopener noreferrer">Source code</a></nav></footer>
     <dialog id="matches-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close matches">×</button></form><span class="step-label">RECIPROCAL MATCHES</span><h2>Your matches</h2><p class="dialog-intro">A match appears only when both sides independently express interest.</p><div id="matches-list"></div></dialog>
     <dialog id="profile-dialog" class="profile-dialog">
       <form method="dialog"><button class="dialog-close" aria-label="Close profile editor">×</button></form>

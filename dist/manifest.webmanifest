@@ -1,0 +1,9 @@
+{
+  "name": "NestMatch",
+  "short_name": "NestMatch",
+  "description": "Reciprocal rental matching for renters and landlords.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#1738d2"
+}

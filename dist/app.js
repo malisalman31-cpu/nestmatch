@@ -1,5 +1,6 @@
 import { applyPreferences, createInitialState, currentCandidate, hydrateState, PROPERTIES, recordDecision, RENTERS } from "./marketplace.js";
 import { setupProfileEditor } from "./profile-ui.js";
+import { shareNestMatch } from "./sharing.js";
 import { registerNestMatchTools } from "./webmcp.js";
 
 const STORAGE_KEY = "nestmatch-workspace-v1";
@@ -147,6 +148,16 @@ document.querySelector("#min-stay").addEventListener("input", (event) => updateP
 document.querySelector("#pet-policy").addEventListener("click", (event) => { const value = event.target.closest("button[data-value]")?.dataset.value; if (value) updatePreferences("landlord", { petPolicy: value }); });
 elements.actions.addEventListener("click", (event) => { const decision = event.target.closest("button[data-decision]")?.dataset.decision; const candidate = currentCandidate(state); if (decision && candidate) decide(candidate.id, decision); });
 document.querySelector("#matches-button").addEventListener("click", () => elements.matchesDialog.showModal());
+for (const button of [document.querySelector("#share-button"), document.querySelector("#discovery-share")]) {
+  button.addEventListener("click", async () => {
+    try {
+      const result = await shareNestMatch();
+      showToast(result === "shared" ? "Invite sent through your share menu." : result === "copied" ? "Invite link copied." : "Copy the page address to share NestMatch.");
+    } catch (error) {
+      if (error?.name !== "AbortError") showToast("Sharing was not available. Copy the page address instead.");
+    }
+  });
+}
 document.querySelector("#reset-button").addEventListener("click", resetDemo); document.querySelector("[data-reset]").addEventListener("click", resetDemo);
 function resetDemo() { state = createInitialState(); profileEditor.reset(); saveState(); render(); showToast("Demo and private profiles reset."); }
 
