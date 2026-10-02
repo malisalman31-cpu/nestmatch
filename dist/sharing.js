@@ -1,4 +1,4 @@
-export const CANONICAL_URL = "https://nestmatch-marketplace.workspace-016092.chatgpt.site/";
+export const CANONICAL_URL = "https://nestmatch-rentals.pages.dev/";
 
 export function buildSharePayload() {
   const url = new URL(CANONICAL_URL);

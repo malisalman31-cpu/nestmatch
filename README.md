@@ -2,7 +2,7 @@
 
 NestMatch is a working, reciprocal rental-marketplace demo with a Python-first recommendation engine. Renters and landlords review independently ranked candidates, and a match forms only after both sides express interest.
 
-**Live demo:** https://nestmatch-marketplace.workspace-016092.chatgpt.site
+**Live demo:** https://nestmatch-rentals.pages.dev
 
 The public experience implements the four workflows described in the portfolio project:
 
@@ -30,9 +30,15 @@ Profile details and photos are device-private: they remain in the current browse
 
 ## Discovery and sharing
 
-The public site includes search metadata, structured application data, a sitemap, crawl rules, an installable web-app manifest, indexable product and privacy pages, and a built-in invite control. Shared links include campaign labels without uploading personal profile or matching data.
+The public site includes search metadata, structured application data, a sitemap, crawl rules, a web-app manifest, indexable product and privacy pages, and a built-in invite control. Shared links include campaign labels without uploading personal profile or matching data.
 
 Third-party ads are not active. A verified publisher account, eligible domain, consent setup, and ad-network approval are required before real advertising can be enabled safely.
+
+## Hosting
+
+The current public demo runs on Cloudflare Pages under the free project `nestmatch-rentals`. Deploy the contents of `dist/` as the root of a Pages Direct Upload archive; do not upload repository metadata or private configuration. The previous Sites deployment remains a separate copy.
+
+`dist/ads.txt` declares the owner's AdSense publisher account for ownership verification and authorized selling. It does not load ads, cookies, or tracking scripts. The intended ad format is a small in-page banner without interrupting the matching flow; publisher approval and applicable consent setup must precede activation.
 
 ## Run locally
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nestmatch-marketplace.workspace-016092.chatgpt.site/sitemap.xml
+Sitemap: https://nestmatch-rentals.pages.dev/sitemap.xml
