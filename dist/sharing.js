@@ -7,7 +7,7 @@ export function buildSharePayload() {
   url.searchParams.set("utm_campaign", "nestmatch_invite");
   return {
     title: "NestMatch — mutual rental matching",
-    text: "Try NestMatch: a free rental matching demo where renters and landlords connect after both sides are interested.",
+    text: "Explore NestMatch’s free rental planning tools and local-only matching demo for renters and landlords. Demo profiles are not real listings.",
     url: url.toString(),
   };
 }

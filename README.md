@@ -30,6 +30,10 @@ Profile details and photos are device-private: they remain in the current browse
 
 ## Discovery and sharing
 
+The free rental-planning section is useful nationwide even though the matching demonstration still uses sample Los Angeles inventory. It includes `/rental-guides`, `/short-term-vs-long-term-rentals`, `/rental-listing-checklist`, and `/rental-cost-calculator`. The calculator processes quotes locally, separates deposits from costs, and shows base-rent commitments beyond the planned stay. It does not provide market prices, legal liability, or affordability decisions.
+
+Run `npm run build:search` after editing `scripts/build_search_pages.py`. The Python generator builds static HTML (readable without JavaScript) and the seven-page canonical sitemap. Tests check metadata, internal links, structured data, calculator edge cases, and generated-output parity. A dedicated `404.html` prevents unknown URLs from falling back to a successful demo page on Cloudflare Pages. The home page includes the owner's Search Console verification tag; keep it across deployments.
+
 The public site includes search metadata, structured application data, a sitemap, crawl rules, a web-app manifest, indexable product and privacy pages, and a built-in invite control. Shared links include campaign labels without uploading personal profile or matching data.
 
 Third-party ads are not active. A verified publisher account, eligible domain, consent setup, and ad-network approval are required before real advertising can be enabled safely.

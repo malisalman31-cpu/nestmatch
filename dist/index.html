@@ -3,19 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Try NestMatch, a free Los Angeles rental matching demo where renters and landlords rank compatible profiles and connect after mutual interest." />
+    <meta name="description" content="Plan a rental search anywhere in the U.S. Compare short-term and long-term rental costs, use free housing checklists, and explore NestMatch’s matching demo." />
+    <meta name="google-site-verification" content="CXrNLJDV_DJ8sL8NUBTKUV_g1NdEp_SUhwcE_Qv4AAo" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Muhammad Ali Salman" />
     <meta name="theme-color" content="#1738d2" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="NestMatch" />
-    <meta property="og:title" content="NestMatch — Rental matching built for both sides" />
-    <meta property="og:description" content="Renters and landlords explore ranked matches, share interests, and connect only when both sides agree." />
+    <meta property="og:title" content="NestMatch — Rental planning tools for anywhere in the U.S." />
+    <meta property="og:description" content="Compare rental costs, prepare for short or long stays, and explore a clearly labeled rental matching demo." />
     <meta property="og:url" content="https://nestmatch-rentals.pages.dev/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="NestMatch — Rental matching built for both sides" />
-    <meta name="twitter:description" content="A free, privacy-friendly demo for reciprocal rental matching." />
-    <title>NestMatch | Mutual Rental Matching in Los Angeles</title>
+    <meta name="twitter:title" content="NestMatch — Free rental planning tools" />
+    <meta name="twitter:description" content="U.S. rental guides, a rental cost comparison calculator, and a matching demo. No account needed." />
+    <title>NestMatch | U.S. Rental Guides &amp; Cost Comparison</title>
     <link rel="canonical" href="https://nestmatch-rentals.pages.dev/" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231738d2'/%3E%3Cpath d='m12 30 20-16 20 16v22H12z' fill='%23d7ff46'/%3E%3Cpath d='M25 52V34h14v18' fill='%231738d2'/%3E%3C/svg%3E" />
@@ -29,7 +30,7 @@
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "Any",
         "isAccessibleForFree": true,
-        "description": "A privacy-friendly Los Angeles rental matching demo where renters and landlords connect after reciprocal interest.",
+        "description": "Free U.S. rental planning guides, a rental cost comparison calculator, and a local-only matching demonstration with sample Los Angeles listings.",
         "author": { "@type": "Person", "name": "Muhammad Ali Salman" }
       }
     </script>
@@ -44,10 +45,17 @@
       <div class="header-actions"><button class="share-button" id="share-button" type="button">Invite people</button><button class="profile-button" id="profile-button" type="button">My profile</button><button class="reset-button" id="reset-button" type="button">Reset demo</button><button class="matches-button" id="matches-button" type="button">Matches <span id="match-count">0</span></button></div>
     </header>
 
+    <section class="search-intro" aria-labelledby="site-heading">
+      <span class="step-label">PLAN YOUR NEXT PLACE</span>
+      <h1 id="site-heading">A clearer rental search, wherever you’re headed.</h1>
+      <p>Free tools and checklists for short-term and long-term housing searches anywhere in the United States.</p>
+      <nav class="resource-links" aria-label="Rental planning"><a href="/rental-cost-calculator">Compare rental costs</a><a href="/rental-guides">Explore rental guides</a><a href="#main">Try the matching demo</a></nav>
+      <p class="demo-notice"><strong>Demo, not live listings.</strong> The matching experience below uses sample Los Angeles homes and profiles. No homes can be booked and no messages are sent. Your photos and profile stay on this device.</p>
+    </section>
     <main class="workspace" id="main">
       <aside class="preferences">
         <span class="step-label">YOUR FIT</span>
-        <h1 id="preference-heading">Shape your ranked feed.</h1>
+        <h2 id="preference-heading">Shape your ranked feed.</h2>
         <button class="profile-summary" id="profile-summary" type="button">
           <span class="profile-avatar" id="profile-avatar">YU</span>
           <span><strong id="profile-name">Your renter profile</strong><small id="profile-meta">Add photos, hobbies and passions</small></span>
@@ -110,7 +118,7 @@
       </div>
       <button class="discovery-share" id="discovery-share" type="button">Invite a renter or landlord</button>
     </section>
-    <footer class="site-footer"><span>© 2026 NestMatch demo</span><nav aria-label="Site information"><a href="./about.html">About</a><a href="./privacy.html">Privacy</a><a href="https://github.com/malisalman31-cpu/nestmatch" rel="noopener noreferrer">Source code</a></nav></footer>
+    <footer class="site-footer"><span>© 2026 NestMatch</span><nav aria-label="Site information"><a href="/rental-guides">Rental guides</a><a href="/rental-cost-calculator">Cost calculator</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="https://github.com/malisalman31-cpu/nestmatch" rel="noopener noreferrer">Source code</a></nav></footer>
     <dialog id="matches-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close matches">×</button></form><span class="step-label">RECIPROCAL MATCHES</span><h2>Your matches</h2><p class="dialog-intro">A match appears only when both sides independently express interest.</p><div id="matches-list"></div></dialog>
     <dialog id="profile-dialog" class="profile-dialog">
       <form method="dialog"><button class="dialog-close" aria-label="Close profile editor">×</button></form>

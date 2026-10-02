@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nestmatch-rentals.pages.dev/</loc><priority>1.0</priority></url>
-  <url><loc>https://nestmatch-rentals.pages.dev/about</loc><priority>0.7</priority></url>
-  <url><loc>https://nestmatch-rentals.pages.dev/privacy</loc><priority>0.4</priority></url>
+  <url><loc>https://nestmatch-rentals.pages.dev/</loc></url>
+  <url><loc>https://nestmatch-rentals.pages.dev/about</loc></url>
+  <url><loc>https://nestmatch-rentals.pages.dev/privacy</loc></url>
+  <url><loc>https://nestmatch-rentals.pages.dev/rental-guides</loc></url>
+  <url><loc>https://nestmatch-rentals.pages.dev/short-term-vs-long-term-rentals</loc></url>
+  <url><loc>https://nestmatch-rentals.pages.dev/rental-listing-checklist</loc></url>
+  <url><loc>https://nestmatch-rentals.pages.dev/rental-cost-calculator</loc></url>
 </urlset>
