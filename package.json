@@ -1,6 +1,6 @@
 {
   "name": "nestmatch",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": false,
   "type": "module",
   "scripts": {
@@ -9,8 +9,11 @@
     "build:search": "python3 scripts/build_search_pages.py",
     "test": "node --test && python3 -m unittest discover -s tests -p 'test_*.py'",
     "test:coverage": "node --test --experimental-test-coverage",
-    "check": "node --check dist/marketplace.js && node --check dist/profiles.js && node --check dist/profile-ui.js && node --check dist/sharing.js && node --check dist/app.js && node --check dist/webmcp.js && node --check dist/rental-costs.js && node --check dist/rental-cost-ui.js && node --check scripts/serve.mjs && node --test && python3 -m unittest discover -s tests -p 'test_*.py' && python3 analysis/build_reference_rankings.py --check && python3 scripts/build_search_pages.py --check"
+    "check": "node --check dist/shortlist.js && node --check dist/shortlist-app.js && node --check dist/marketplace.js && node --check dist/profiles.js && node --check dist/profile-ui.js && node --check dist/sharing.js && node --check dist/app.js && node --check dist/webmcp.js && node --check dist/rental-costs.js && node --check dist/rental-cost-ui.js && node --check scripts/serve.mjs && node --test && python3 -m unittest discover -s tests -p 'test_*.py' && python3 analysis/build_reference_rankings.py --check && python3 scripts/build_search_pages.py --check && python3 analysis/build_shortlist.py --check",
+    "build:shortlist": "python3 analysis/build_shortlist.py"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "license": "MIT"
 }

@@ -18,3 +18,9 @@ jobs:
           python-version: "3.12"
       - run: npm run check
       - run: npm run test:coverage
+      - name: Install browser regression runner
+        run: npm install --no-save --package-lock=false playwright@1.62.1
+      - name: Install test browser
+        run: npx playwright install --with-deps chromium
+      - name: Verify desktop and mobile shortlist journeys
+        run: node scripts/browser-check.mjs

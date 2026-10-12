@@ -21,7 +21,7 @@ PAGES = {
 <h2>A search brief you can use in any city</h2>
 <ol><li><strong>Location:</strong> choose a city or ZIP code, then list the destinations you need to reach and your acceptable commute.</li><li><strong>Dates:</strong> note your earliest and latest move-in dates and expected departure. Ask whether the actual availability matches.</li><li><strong>Home:</strong> list bedroom needs, furnished or unfurnished, accessibility requirements, pet needs, and parking.</li><li><strong>Costs:</strong> compare rent plus utilities and mandatory fees; track deposits separately.</li><li><strong>Daily life:</strong> ask about noise, shared spaces, maintenance, internet, and laundry.</li></ol>
 <h2>What NestMatch offers today</h2>
-<p>These tools are available nationwide. The <a href="/#main">matching demo</a> uses sample Los Angeles homes and profiles; it is not an inventory of available rentals. NestMatch does not yet publish listings, connect visitors, or accept applications. Local requirements and individual agreements vary, so confirm details with the property manager and relevant local resources.</p>
+<p>These tools are available nationwide. The <a href="/#main">shortlist demo</a> uses fictional Los Angeles homes; it is not an inventory of available rentals. NestMatch does not yet publish listings, connect visitors, or accept applications. Local requirements and individual agreements vary, so confirm details with the property manager and relevant local resources.</p>
 """,
     },
     "short-term-vs-long-term-rentals": {
@@ -62,7 +62,7 @@ PAGES = {
 <h2>4. Keep a comparison note</h2>
 <p>For each home, record the date viewed, the contact you verified, the quoted terms, unanswered questions, and what you personally observed. Store sensitive documents securely; don't put identity documents or personal financial information in public listing comments.</p>
 <h2>About the NestMatch demo</h2>
-<p>Sample profiles and badges in the <a href="/#main">matching demo</a> are simulated. NestMatch does not verify identities, screen tenants, process applications, or hold deposits. These checklists do not replace independent verification or advice about a particular agreement.</p>
+<p>Sample homes and features in the <a href="/#main">matching demo</a> are simulated. NestMatch does not verify identities, screen tenants, process applications, or hold deposits. These checklists do not replace independent verification or advice about a particular agreement.</p>
 """,
     },
     "rental-cost-calculator": {
@@ -140,7 +140,7 @@ def render(slug, page):
 <main id="content" class="info-page guide-page"><nav aria-label="Breadcrumb"><a href="/">NestMatch</a> / {heading}</nav>
 <span class="step-label">FREE RENTAL PLANNING · UNITED STATES</span><h1>{heading}</h1>
 {body}
-<aside class="demo-notice"><strong>Current availability:</strong> guides and tools are open to everyone. NestMatch's matching feature is a demo with sample listings, not a live rental or booking service.</aside>
+<aside class="demo-notice"><strong>Current availability:</strong> guides and tools are open to everyone. NestMatch's shortlist feature is a demo with sample listings, not a live rental or booking service.</aside>
 </main>
 <footer class="site-footer"><span>© 2026 NestMatch</span><nav aria-label="Site information"><a href="/rental-guides">All guides</a><a href="/about">About</a><a href="/privacy">Privacy</a></nav></footer>{script}
 </body></html>

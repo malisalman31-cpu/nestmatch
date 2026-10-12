@@ -1,10 +1,30 @@
 # NestMatch
 
-NestMatch is a working, reciprocal rental-marketplace demo with a Python-first recommendation engine. Renters and landlords review independently ranked candidates, and a match forms only after both sides express interest.
+NestMatch is a free **rental-shortlist prototype**, not a live marketplace. The current homepage lets renters filter eight fictional Los Angeles homes, swipe or use accessible buttons to save/pass, undo decisions, and compare saved costs. Private notes and progress labels persist in the current browser.
+
+## Current shortlist experience
+
+- Python and SQLite generate deterministic sample data: `analysis/build_shortlist.py`, `analysis/shortlist.sql`.
+- `dist/shortlist.js` validates inventory, applies must-have filters, ranks preferences, and manages save/pass/undo state.
+- `dist/shortlist-app.js` renders discovery, saved dashboard, cost comparison, and optional neighborhood maps.
+- Unknown utilities and deposits are explicit, not zero. Must-have unknowns can be excluded.
+- Commute and personal notes are notes only. Progress labels do not send messages or applications.
+- Map pins show sample neighborhoods, never real property addresses. Maps contact OpenStreetMap only on request.
+- Sample application buttons are disabled. There are no Airbnb, Zillow, Vrbo, Furnished Finder, or Craigslist integrations.
+- Data is device-local, not synchronized. No accounts, shared listing submission, screening, payments, ads, or live inventory.
+- Existing guides remain available. The previous reciprocal demo and its local profiles/photos are preserved at `/legacy-demo.html` under their original storage keys.
+
+Run `npm run build:shortlist` after editing the Python/SQL fixtures. Run `npm run check` to verify generated output and the new and legacy suites.
+
+### Before a real pilot
+
+Recruit property owners who grant display permission; verify each source URL, listing provenance, current availability, and rights to photos. Add a durable consented backend and listing moderation before collecting public submissions. Do not describe samples as live inventory or claim coverage of all platforms.
+
+The rest of this README documents the retained **legacy reciprocal-matching demo**, not the active shortlist ranking model.
 
 **Live demo:** https://nestmatch-rentals.pages.dev
 
-The public experience implements the four workflows described in the portfolio project:
+The legacy experience implements the four workflows described in the portfolio project:
 
 1. candidate discovery;
 2. ranked renter and property feeds;
@@ -34,7 +54,7 @@ The free rental-planning section is useful nationwide even though the matching d
 
 Run `npm run build:search` after editing `scripts/build_search_pages.py`. The Python generator builds static HTML (readable without JavaScript) and the seven-page canonical sitemap. Tests check metadata, internal links, structured data, calculator edge cases, and generated-output parity. A dedicated `404.html` prevents unknown URLs from falling back to a successful demo page on Cloudflare Pages. The home page includes the owner's Search Console verification tag; keep it across deployments.
 
-The public site includes search metadata, structured application data, a sitemap, crawl rules, a web-app manifest, indexable product and privacy pages, and a built-in invite control. Shared links include campaign labels without uploading personal profile or matching data.
+The public site includes search metadata, structured application data, a sitemap, crawl rules, a web-app manifest, indexable product and privacy pages, and a legacy-demo invite control. Shared links include campaign labels without uploading personal profile or matching data.
 
 Third-party ads are not active. A verified publisher account, eligible domain, consent setup, and ad-network approval are required before real advertising can be enabled safely.
 
@@ -60,7 +80,7 @@ npm run check
 npm run test:coverage
 ```
 
-GitHub Actions runs both implementations on every push: 65 browser-model tests, 12 Python recommendation tests, a cross-language parity test, deterministic reference-output validation, and JavaScript coverage.
+GitHub Actions checks the current shortlist, the retained legacy model, Python/JavaScript parity, generated fixtures, search pages, and JavaScript coverage on every push.
 
 ## Architecture
 

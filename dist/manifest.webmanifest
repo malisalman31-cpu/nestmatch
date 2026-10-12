@@ -1,7 +1,7 @@
 {
   "name": "NestMatch",
   "short_name": "NestMatch",
-  "description": "Reciprocal rental matching for renters and landlords.",
+  "description": "A free rental shortlist prototype. Swipe, save, and compare sample homes.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f6f7fb",
