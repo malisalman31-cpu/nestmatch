@@ -1,3 +1,11 @@
+# Real-listing dashboard (October 2026)
+
+Production now loads the free Mi Casa Rentals public API directly in the browser (CORS, no keys, no fees). Initial source coverage is Pensacola, Florida, not nationwide. `dist/rental-feed.js` validates the source identity, explicit attribution license, schema, timestamps, costs, duplicate IDs and outbound URL allowlist. Source text is rendered with textContent. No third-party photos are copied or requested; each card links to its original listing for photos, inquiries and applications. Costs exclude conditional fees. Unknown full-stay availability is never assumed confirmed. Failed, old or invalid feeds fail closed without sample substitution. The source receives normal connection metadata but no saved preferences or notes.
+
+The provider caches responses for five minutes. Reload retrieves current source data; no paid service, background job, or credential is required. Source terms: https://www.micasa.rentals/api.php (read 2026-10-15; explicitly allows use, caching, republication with attribution). This permission does not extend to Zillow, Airbnb, Vrbo or Craigslist.
+
+`/?demo=1` retains the fictional LA inventory and old shortlist storage. Real saves use `nestmatch-live-shortlist-v1`; no existing demo saves are erased. Source removals disappear on reload. Notes remain private browser data, not actual contact or applications.
+
 # NestMatch
 
 NestMatch is a free **rental-shortlist prototype**, not a live marketplace. The current homepage lets renters filter eight fictional Los Angeles homes, swipe or use accessible buttons to save/pass, undo decisions, and compare saved costs. Private notes and progress labels persist in the current browser.

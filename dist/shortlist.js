@@ -40,8 +40,12 @@ export function assess(row,input) {
   const cost=row.monthly_total??row.known_monthly_minimum;
   if(cost>p.budget) reasons.push('Over monthly budget');
   if(row.monthly_total===null) missing.push('Monthly utilities cost');
+  if(row.demo===false && row.fees===null) missing.push('Additional fees');
   if(row.deposit===null) missing.push('Deposit'); else if(row.deposit>p.deposit) reasons.push('Over deposit limit');
-  if(p.start && (row.available_from>p.start || row.available_to<p.end)) reasons.push('Dates not covered');
+  if(p.start) {
+    if(!row.available_from || !row.available_to) missing.push('Full-stay availability');
+    if((row.available_from && row.available_from>p.start) || (row.available_to && row.available_to<p.end)) reasons.push('Dates not covered');
+  }
   let score=0;
   for(const [key,label] of Object.entries(FEATURES)) {
     const choice=p.features[key]??'any'; if(choice==='any') continue;
@@ -79,7 +83,7 @@ export function hydrate(raw,records) {
   return base;
 }
 export function stayEstimate(row,p) {
-  if(!p.start||!p.end||row.monthly_total===null) return null;
+  if(!p.start||!p.end||row.monthly_total===null||row.demo===false) return null;
   const days=(Date.parse(p.end)-Date.parse(p.start))/86400000;
   return {days,amount:row.monthly_total*days/30};
 }

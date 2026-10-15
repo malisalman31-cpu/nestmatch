@@ -75,7 +75,8 @@ class SearchPages(unittest.TestCase):
                     self.assertNotIn(f'"@type": "{prohibited}"', block)
 
     def test_demo_disclosure_and_noindex_error_page(self):
-        self.assertIn("Demo, not live listings", (DIST / "index.html").read_text())
+        self.assertIn("Initial coverage: Pensacola, Florida", (DIST / "index.html").read_text())
+        self.assertIn("Try fictional demo listings", (DIST / "index.html").read_text())
         self.assertIn('content="noindex"', (DIST / "404.html").read_text())
         self.assertNotIn("404", (DIST / "sitemap.xml").read_text())
         self.assertIn(ORIGIN + "/sitemap.xml", (DIST / "robots.txt").read_text())

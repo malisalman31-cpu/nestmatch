@@ -21,7 +21,7 @@ PAGES = {
 <h2>A search brief you can use in any city</h2>
 <ol><li><strong>Location:</strong> choose a city or ZIP code, then list the destinations you need to reach and your acceptable commute.</li><li><strong>Dates:</strong> note your earliest and latest move-in dates and expected departure. Ask whether the actual availability matches.</li><li><strong>Home:</strong> list bedroom needs, furnished or unfurnished, accessibility requirements, pet needs, and parking.</li><li><strong>Costs:</strong> compare rent plus utilities and mandatory fees; track deposits separately.</li><li><strong>Daily life:</strong> ask about noise, shared spaces, maintenance, internet, and laundry.</li></ol>
 <h2>What NestMatch offers today</h2>
-<p>These tools are available nationwide. The <a href="/#main">shortlist demo</a> uses fictional Los Angeles homes; it is not an inventory of available rentals. NestMatch does not yet publish listings, connect visitors, or accept applications. Local requirements and individual agreements vary, so confirm details with the property manager and relevant local resources.</p>
+<p>These tools are available nationwide. The <a href="/#main">rental dashboard</a> links to source listings, initially from Mi Casa Rentals in Pensacola, Florida. It is not nationwide or all-platform inventory. NestMatch does not handle applications or connect visitors directly. Local requirements and individual agreements vary, so confirm details with the property manager and relevant local resources.</p>
 """,
     },
     "short-term-vs-long-term-rentals": {
@@ -140,7 +140,7 @@ def render(slug, page):
 <main id="content" class="info-page guide-page"><nav aria-label="Breadcrumb"><a href="/">NestMatch</a> / {heading}</nav>
 <span class="step-label">FREE RENTAL PLANNING · UNITED STATES</span><h1>{heading}</h1>
 {body}
-<aside class="demo-notice"><strong>Current availability:</strong> guides and tools are open to everyone. NestMatch's shortlist feature is a demo with sample listings, not a live rental or booking service.</aside>
+<aside class="demo-notice"><strong>Current availability:</strong> guides and tools are open to everyone. NestMatch links to real source listings with initial Pensacola coverage. Availability must be confirmed on the original site; NestMatch is not a booking service.</aside>
 </main>
 <footer class="site-footer"><span>© 2026 NestMatch</span><nav aria-label="Site information"><a href="/rental-guides">All guides</a><a href="/about">About</a><a href="/privacy">Privacy</a></nav></footer>{script}
 </body></html>
