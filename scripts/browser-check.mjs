@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
 import {chromium} from 'playwright';
 import {feedFixture} from '../tests/feed-fixture.js';
+import {checkOrganizer} from './organizer-browser-check.mjs';
 const server=spawn(process.execPath,['scripts/serve.mjs'],{env:{...process.env,PORT:'4181'},stdio:['ignore','pipe','inherit']});
 let browser;
 try{
@@ -61,4 +62,5 @@ try{
     await context.close();console.log(`Passed real-source dashboard, outbound links, notes, persistence, demo separation and overflow at ${viewport.width}px`);
   }
   const offline=await browser.newPage();await offline.route('https://www.micasa.rentals/api/v1/units?limit=100',route=>route.fulfill({status:503,body:'unavailable'}));await offline.goto('http://127.0.0.1:4181');await offline.getByText('The rental source is unavailable or out of date.',{exact:false}).waitFor();assert.ok(await offline.locator('#app').isHidden());console.log('Passed source failure without demo substitution');
+  await checkOrganizer(browser);
 }finally{await browser?.close();server.kill();}
