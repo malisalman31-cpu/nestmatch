@@ -1,3 +1,9 @@
+# Search visibility update (November 2026)
+
+The public site has eleven canonical pages, including the rental-link organizer and three practical guides: organizing an apartment search across sites, comparing furnished monthly rentals, and checking utilities-included quotes. The homepage links directly to these resources; the guide hub links to every guide. Public content distinguishes browser-local manual bookmarks from the limited Pensacola source feed. No additional inventory, paid services, or tracking was added.
+
+Run `python3 scripts/build_search_pages.py` after editing the guide generator. Existing checks validate metadata, canonical URLs, internal links, sitemap reachability, JSON-LD, and generated output. Preserve the Search Console verification tag. Submit `/sitemap.xml` in the owner's Search Console after deployment; indexing and rankings are controlled by search engines and are not guaranteed.
+
 # Personal rental links (October 2026)
 
 `/organizer` is a free browser-local bookmark organizer for public rental links from any location. Renters enter their own title, city, monthly costs, planned dates, amenities and notes, then swipe/save/pass, compare saved costs, edit, undo, and download/restore a private JSON backup. It does not scrape or fetch listing pages, images, metadata or availability. All entered data is explicitly unverified. Opening a source is an ordinary outbound link without a referrer. Unknown amounts remain unknown, not zero. No screening, applications, cloud accounts, payments or credit-document uploads are added.
@@ -14,7 +20,7 @@ The provider caches responses for five minutes. Reload retrieves current source 
 
 # NestMatch
 
-NestMatch is a free **rental-shortlist prototype**, not a live marketplace. The current homepage lets renters filter eight fictional Los Angeles homes, swipe or use accessible buttons to save/pass, undo decisions, and compare saved costs. Private notes and progress labels persist in the current browser.
+NestMatch is a free rental discovery and organization tool with a limited real source feed and a separate fictional demo. The homepage uses Mi Casa Rentals data; `/?demo=1` uses eight fictional Los Angeles homes. Private notes and progress labels persist in the current browser.
 
 ## Current shortlist experience
 
@@ -25,7 +31,7 @@ NestMatch is a free **rental-shortlist prototype**, not a live marketplace. The 
 - Commute and personal notes are notes only. Progress labels do not send messages or applications.
 - Map pins show sample neighborhoods, never real property addresses. Maps contact OpenStreetMap only on request.
 - Sample application buttons are disabled. There are no Airbnb, Zillow, Vrbo, Furnished Finder, or Craigslist integrations.
-- Data is device-local, not synchronized. No accounts, shared listing submission, screening, payments, ads, or live inventory.
+- Data is device-local, not synchronized. No accounts, shared listing submission, screening, payments, or ads. The fictional demo is separate from the live feed described above.
 - Existing guides remain available. The previous reciprocal demo and its local profiles/photos are preserved at `/legacy-demo.html` under their original storage keys.
 
 Run `npm run build:shortlist` after editing the Python/SQL fixtures. Run `npm run check` to verify generated output and the new and legacy suites.
@@ -66,7 +72,7 @@ Profile details and photos are device-private: they remain in the current browse
 
 The free rental-planning section is useful nationwide even though the matching demonstration still uses sample Los Angeles inventory. It includes `/rental-guides`, `/short-term-vs-long-term-rentals`, `/rental-listing-checklist`, and `/rental-cost-calculator`. The calculator processes quotes locally, separates deposits from costs, and shows base-rent commitments beyond the planned stay. It does not provide market prices, legal liability, or affordability decisions.
 
-Run `npm run build:search` after editing `scripts/build_search_pages.py`. The Python generator builds static HTML (readable without JavaScript) and the seven-page canonical sitemap. Tests check metadata, internal links, structured data, calculator edge cases, and generated-output parity. A dedicated `404.html` prevents unknown URLs from falling back to a successful demo page on Cloudflare Pages. The home page includes the owner's Search Console verification tag; keep it across deployments.
+Run `npm run build:search` after editing `scripts/build_search_pages.py`. The Python generator builds static HTML (readable without JavaScript) and the eleven-page canonical sitemap. Tests check metadata, internal links, structured data, calculator edge cases, and generated-output parity. A dedicated `404.html` prevents unknown URLs from falling back to a successful demo page on Cloudflare Pages. The home page includes the owner's Search Console verification tag; keep it across deployments.
 
 The public site includes search metadata, structured application data, a sitemap, crawl rules, a web-app manifest, indexable product and privacy pages, and a legacy-demo invite control. Shared links include campaign labels without uploading personal profile or matching data.
 
@@ -109,7 +115,7 @@ GitHub Actions checks the current shortlist, the retained legacy model, Python/J
 
 ## Scope and privacy
 
-This is a public portfolio implementation with representative demo profiles and listings. It does not publish real addresses, upload profile photos, run background checks, accept payments, or contact anyone. All decisions, profile fields, and photos remain on the current device unless the user clears browser storage.
+The live discovery view uses the authorized source feed described above; fictional profiles and listings are confined to demo experiences. NestMatch does not upload profile photos, run background checks, accept payments, or contact anyone. Decisions, profile fields, photos, and personal link notes remain on the current device unless the user exports a backup or clears browser storage.
 
 The property triptych is original synthetic imagery generated specifically for this public demo; it does not depict actual listings.
 

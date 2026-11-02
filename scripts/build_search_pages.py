@@ -14,6 +14,9 @@ PAGES = {
         "body": """
 <p>A place can look right in photos and still be wrong for your dates, daily routine, or budget. Start with what you need from the stay, then compare written quotes for the same period.</p>
 <div class="guide-grid">
+<article><h2><a href="/apartment-search-organizer">Organize listings from different sites</a></h2><p>Keep public rental links, unanswered questions, and your own tour notes in one personal shortlist.</p></article>
+<article><h2><a href="/furnished-monthly-rentals">Plan a furnished monthly stay</a></h2><p>A practical checklist for furniture, exact dates, internet, extensions, and the total quoted cost.</p></article>
+<article><h2><a href="/utilities-included-rentals">Compare utilities-included rentals</a></h2><p>Check usage caps and separate bills before comparing an inclusive price with base rent.</p></article>
 <article><h2><a href="/short-term-vs-long-term-rentals">Short-term or long-term?</a></h2><p>Compare flexibility, furnishings, move-in timing, and the length of the commitment—not just the advertised monthly price.</p></article>
 <article><h2><a href="/rental-cost-calculator">Compare two rental quotes</a></h2><p>Calculate recurring costs, one-time fees, and upfront cash. Separate a potentially refundable deposit from the cost of the stay.</p></article>
 <article><h2><a href="/rental-listing-checklist">Check a listing before you commit</a></h2><p>Prepare questions about the home and the person offering it. Recognize common warning signs before sending money or documents.</p></article>
@@ -61,8 +64,8 @@ PAGES = {
 <p>List recurring rent, utilities, required fees, one-time charges, and deposits separately. Ask which amounts may be refundable and under what conditions. Record payment dates and the agreed length of the stay. Use the <a href="/rental-cost-calculator">rental cost calculator</a> to compare the quoted numbers without treating a deposit as a guaranteed refund.</p>
 <h2>4. Keep a comparison note</h2>
 <p>For each home, record the date viewed, the contact you verified, the quoted terms, unanswered questions, and what you personally observed. Store sensitive documents securely; don't put identity documents or personal financial information in public listing comments.</p>
-<h2>About the NestMatch demo</h2>
-<p>Sample homes and features in the <a href="/#main">matching demo</a> are simulated. NestMatch does not verify identities, screen tenants, process applications, or hold deposits. These checklists do not replace independent verification or advice about a particular agreement.</p>
+<h2>Keep your search organized</h2>
+<p>Use <a href="/organizer">My rental links</a> to save public listing URLs and your own notes. The <a href="/">discovery dashboard</a> has limited real source coverage in Pensacola, Florida; a separate demo uses fictional homes. NestMatch does not verify identities, screen tenants, process applications, or hold deposits. These checklists do not replace independent verification or advice about a particular agreement.</p>
 """,
     },
     "rental-cost-calculator": {
@@ -91,6 +94,72 @@ PAGES = {
 """,
     },
 }
+
+PAGES.update({
+    "apartment-search-organizer": {
+        "title": "Free Apartment Search Organizer & Rental Shortlist | NestMatch",
+        "heading": "One shortlist for an apartment search across sites.",
+        "description": "Organize public rental links, compare your quoted costs, save favorites, and track tour questions in NestMatch's free apartment search organizer.",
+        "body": """
+<p>Your best options may be scattered across property-manager websites, apartment portals, furnished-housing sites, and individual listings. A shared search tab does not tell you which home includes parking or which quote has changed. A useful shortlist keeps the original link alongside the details you have actually checked.</p>
+<p><a class="guide-cta" href="/organizer">Start your free rental shortlist</a></p>
+<h2>From open tabs to a decision in five steps</h2>
+<ol><li><strong>Add a public listing link.</strong> Copy the public page URL, not a private application or account link. Give it a name you recognize, such as “Studio near work.”</li><li><strong>Write down the quote.</strong> Enter the city, rent, utilities, recurring fees, one-time costs, and deposit when known. Leave unknown amounts blank; a blank is not a promise that the cost is zero.</li><li><strong>Record what matters to your stay.</strong> Add planned dates, bedrooms, amenities, and questions about pets, parking, furnishings, or laundry. Your dates are a plan, not confirmed availability.</li><li><strong>Swipe or use Save and Pass.</strong> Review your options, keep favorites, and undo a decision if you change your mind. Compare the saved options using the same cost categories.</li><li><strong>Return to the original listing.</strong> Confirm the current offer, ask your questions, and inquire or apply on the source site. Track your own progress in private notes.</li></ol>
+<h2>A note format you can reuse</h2>
+<p>For each place, write: “Checked on [date]. Quote for [move-in] to [move-out]. Included: [items]. Still unknown: [questions]. Next step: [action].” Record answers after a tour or conversation instead of relying on your memory of a photo.</p>
+<h2>Can I save links from different rental platforms?</h2>
+<p>You can manually add public HTTPS rental links, including links you find on Zillow, Airbnb, Furnished Finder, Craigslist, or a property manager's own site. NestMatch does not import those platforms' listings, photos, prices, or availability. There is no partnership implied by saving a link, and NestMatch does not send messages or applications for you.</p>
+<h2>Does it work outside Pensacola?</h2>
+<p>The personal link organizer works with links from any location. Its cost fields are in U.S. dollars: compare quotes in USD and do not mix currencies. The separate live discovery feed currently covers Pensacola, Florida; saving your own links does not expand that feed.</p>
+<h2>Where are my saved rentals?</h2>
+<p>Links and notes stay in this browser profile. There is no account, cloud sync, or automatic transfer to another phone. Download a private JSON backup from the organizer before clearing browser data; use Restore backup to move your shortlist to another browser. Keep the backup private. Do not add credit reports, banking information, identity documents, or private application links.</p>
+<p>Next: <a href="/rental-listing-checklist">check the listing before you commit</a>, or <a href="/rental-cost-calculator">compare two complete rental quotes</a>.</p>
+""",
+    },
+    "furnished-monthly-rentals": {
+        "title": "Furnished Monthly Rental Checklist | NestMatch",
+        "heading": "Compare furnished monthly rentals before you book a stay.",
+        "description": "A furnished monthly rental checklist for temporary housing: confirm dates, furniture, utilities, internet, parking, fees, and extension terms.",
+        "body": """
+<p>A work assignment, internship, relocation, or gap between homes can make a furnished rental appealing. Start with the exact dates and what you need on arrival. “Furnished,” “monthly,” and “utilities included” are not detailed inventories or written quotes.</p>
+<h2>Build a stay brief before searching</h2>
+<p>Write down your arrival and departure dates, any flexibility, the number of people staying, bedroom needs, daily destinations, pet needs, and the total budget for the stay. Separate essentials from preferences. For example, a desk and reliable internet may be essential for remote work, while a balcony is optional.</p>
+<h2>Questions to send to the listing contact</h2>
+<ul><li><strong>Dates:</strong> Is the exact home available for the entire stay? What is the minimum stay, and how are partial months quoted?</li><li><strong>Furniture:</strong> Which beds, linens, kitchen supplies, seating, and work surfaces are included? Can you see current photos of the exact unit?</li><li><strong>Utilities:</strong> Are electricity, gas, water, trash, and internet included? Are there usage caps, seasonal surcharges, or separate setup fees?</li><li><strong>Daily routine:</strong> Is laundry in the unit or shared? Is parking assigned, available, and included? Who handles maintenance during the stay?</li><li><strong>Costs:</strong> Ask for rent, mandatory recurring fees, taxes if applicable, cleaning charges, and deposits to be listed separately in writing.</li><li><strong>Changes:</strong> What are the written cancellation, notice, and extension terms? An available extension today is not a guarantee for later.</li></ul>
+<h2>Compare the same dates, not just the monthly headline</h2>
+<p>Example only: a three-month quote of $2,200 per month plus $180 per month in utilities and a $250 one-time cleaning charge totals $7,390 before any other charges. A $2,450 monthly quote with those costs included totals $7,350. The higher headline rent can have a lower total. These are invented comparison figures, not local market prices or available listings.</p>
+<p>A deposit affects cash needed to move in but should be shown separately from nonrefundable costs. Whether it is returned depends on the actual agreement and circumstances. For nightly rates or partial months, request a full-stay quote instead of multiplying by an assumed 30-day month.</p>
+<h2>Keep options from different sources together</h2>
+<p>Add public listing links and the details you obtain to <a href="/organizer">My rental links</a>. Save your favorites, record unanswered questions, and open the original pages when you are ready to inquire. This is a manual organizer, not a search of every furnished-housing platform. Check the <a href="/rental-listing-checklist">listing checklist</a> before sending documents or funds.</p>
+<p><a class="guide-cta" href="/rental-cost-calculator">Compare two monthly rental quotes</a></p>
+<p>Related: <a href="/utilities-included-rentals">what to ask about included utilities</a> and <a href="/short-term-vs-long-term-rentals">short-term versus long-term stays</a>.</p>
+""",
+    },
+    "utilities-included-rentals": {
+        "title": "Utilities-Included Rentals: Compare the Total Cost | NestMatch",
+        "heading": "What does “utilities included” actually cover?",
+        "description": "Compare utilities-included apartments with rentals that bill separately. Track electricity, water, internet, caps, recurring fees, and unknown costs.",
+        "body": """
+<p>Two apartments with the same rent can have very different monthly bills. Treat “utilities included” as a question to clarify: which services, how much usage, and for which dates? Ask for the answers in the written quote or agreement.</p>
+<h2>Make an included, separate, or unknown list</h2>
+<div class="table-scroll"><table><caption>Questions for each rental quote</caption><thead><tr><th scope="col">Item</th><th scope="col">What to confirm</th></tr></thead><tbody>
+<tr><th scope="row">Electricity and gas</th><td>Which services are included? Is there a usage or dollar cap? Who pays for amounts above it?</td></tr>
+<tr><th scope="row">Water, sewer, and trash</th><td>Included in rent, a fixed fee, or a variable bill? Is a shared building bill divided among units?</td></tr>
+<tr><th scope="row">Internet</th><td>Included or separate? Shared or dedicated connection? Are equipment and installation included?</td></tr>
+<tr><th scope="row">Parking and laundry</th><td>These may be separate even when utilities are included. What are the recurring or per-use charges?</td></tr>
+<tr><th scope="row">Setup and deposits</th><td>Must you open a service account? Ask the provider about any setup charges or deposit rather than assuming none.</td></tr>
+</tbody></table></div>
+<h2>Use comparable numbers</h2>
+<p>Start with base rent + utilities + mandatory recurring fees. Show one-time costs and deposits separately. If a bill varies, ask for available usage information and compare a range instead of treating one estimate as a fixed price. Occupancy, weather, and your own usage can change the result.</p>
+<p>Example only: one quote is $2,000 rent plus an estimated $150 for utilities, $60 for internet, and $75 for parking, giving $2,285 per month. Another is $2,250 with all four included and no usage cap in the quoted terms. The second is $35 lower per month under those assumptions. If the first quote's utility estimate changes, the difference changes too. These numbers are illustrative, not current offers.</p>
+<h2>Keep unknown bills visible</h2>
+<p>In the <a href="/organizer">rental-link organizer</a>, leave unconfirmed amounts blank and record what you still need to ask. When you have complete quotes, use the <a href="/rental-cost-calculator">cost calculator</a> for a same-length stay. Enter zero only for a charge you have confirmed is zero or included elsewhere; the calculator compares the inputs you provide.</p>
+<h2>Before deciding</h2>
+<ul><li>Confirm the exact unit and dates the quote covers.</li><li>Check whether included services or charges change after an introductory period.</li><li>Read how capped usage, shared meters, or separate accounts are handled.</li><li>Keep the written answer with your own comparison notes, and revisit the original listing for current terms.</li></ul>
+<p>Related: <a href="/furnished-monthly-rentals">furnished monthly rental checklist</a> and <a href="/rental-listing-checklist">questions before committing to a rental</a>.</p>
+""",
+    },
+})
 
 
 def calculator_body(body):
@@ -136,7 +205,7 @@ def render(slug, page):
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head><body>
 <a class="skip-link" href="#content">Skip to content</a>
-<header class="topbar guide-topbar"><a class="brand" href="/"><span class="brand-home">⌂</span>NestMatch</a><nav aria-label="Main navigation"><a href="/rental-guides">Rental guides</a><a href="/rental-cost-calculator">Cost calculator</a><a href="/#main">Matching demo</a></nav></header>
+<header class="topbar guide-topbar"><a class="brand" href="/"><span class="brand-home">⌂</span>NestMatch</a><nav aria-label="Main navigation"><a href="/rental-guides">Rental guides</a><a href="/organizer">My rental links</a><a href="/">Discover listings</a></nav></header>
 <main id="content" class="info-page guide-page"><nav aria-label="Breadcrumb"><a href="/">NestMatch</a> / {heading}</nav>
 <span class="step-label">FREE RENTAL PLANNING · UNITED STATES</span><h1>{heading}</h1>
 {body}
@@ -149,7 +218,7 @@ def render(slug, page):
 
 def outputs():
     pages = {f"{slug}.html": render(slug, page) for slug, page in PAGES.items()}
-    urls = ["/", "/about", "/privacy"] + [f"/{slug}" for slug in PAGES]
+    urls = ["/", "/organizer", "/about", "/privacy"] + [f"/{slug}" for slug in PAGES]
     pages["sitemap.xml"] = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{ORIGIN}{url}</loc></url>\n" for url in urls) + "</urlset>\n"
     return pages
 
@@ -165,4 +234,4 @@ if __name__ == "__main__":
                 raise SystemExit(f"Stale generated page: {name}")
         else:
             path.write_text(content)
-    print("Search pages verified" if args.check else "Built four search pages and sitemap")
+    print("Search pages verified" if args.check else f"Built {len(PAGES)} search pages and sitemap")

@@ -34,7 +34,9 @@ class SearchPages(unittest.TestCase):
 
     def test_sitemap_matches_canonical_pages(self):
         urls = [node.text for node in ET.parse(DIST / "sitemap.xml").iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
-        self.assertEqual(len(urls), 7)
+        self.assertEqual(len(urls), 11)
+        for slug in ['organizer', 'apartment-search-organizer', 'furnished-monthly-rentals', 'utilities-included-rentals']:
+            self.assertIn(f'{ORIGIN}/{slug}', urls)
         self.assertEqual(len(urls), len(set(urls)))
         titles = []
         for url in urls:
@@ -64,6 +66,23 @@ class SearchPages(unittest.TestCase):
                 if not target.suffix:
                     target = target.with_suffix(".html")
                 self.assertTrue(target.is_file(), f"{file.name}: {link}")
+
+    def test_sitemap_pages_reachable_from_home(self):
+        pending, visited = ['/'], set()
+        while pending:
+            path = pending.pop()
+            if path in visited:
+                continue
+            visited.add(path)
+            file = DIST / ('index.html' if path == '/' else path.lstrip('/') + '.html')
+            if not file.is_file():
+                continue
+            for attrs in Page(file.read_text()).attrs('a'):
+                link = urlparse(attrs.get('href', ''))
+                if not link.scheme and link.path.startswith('/') and not link.path.endswith('.html'):
+                    pending.append(link.path)
+        for node in ET.parse(DIST / 'sitemap.xml').iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc'):
+            self.assertIn(urlparse(node.text).path, visited)
 
     def test_structured_data_is_valid_and_not_fake_inventory(self):
         for file in DIST.glob("*.html"):
